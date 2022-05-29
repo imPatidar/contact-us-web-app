@@ -1,12 +1,11 @@
 const express = require("express");
+const authenticate = require("../middleware/authenticate");
 let router = express.Router();
 let {contactUs: ContactUs} = require('../sequelize').models
 
-router.post("/postContactDetails", async (req, res) => {
+router.post("/postContactDetails", authenticate, async (req, res) => {
 
     let contactDetails = req.body;
-    console.log(JSON.stringify(contactDetails));
-
     try {
         if (!contactDetails.name || !contactDetails.email || !contactDetails.message) {
             res.status(400).send("Please fill all the fields");
@@ -32,7 +31,7 @@ router.post("/postContactDetails", async (req, res) => {
 
 });
 
-router.get("/getContactDetails", async (req, res) => {
+router.get("/getContactDetails", authenticate, async (req, res) => {
     try {
         let data = await ContactUs.findAll();
 
