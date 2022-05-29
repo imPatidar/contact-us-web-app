@@ -19,7 +19,7 @@ router.post('/login', async function (req, res, next) {
             password: body.password
         });
 
-        if (user) {
+        if (user.user_name === body.user_name && user.password === body.password) {
             //Generate token
             const token = jwt.sign(
                 {user_name: body.user_name},
@@ -40,6 +40,7 @@ router.post('/login', async function (req, res, next) {
         }
     } catch (error) {
         res.status(500).json({
+            success: false,
             message: error.message
         })
     }

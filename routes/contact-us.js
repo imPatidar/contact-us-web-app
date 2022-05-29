@@ -3,7 +3,7 @@ const authenticate = require("../middleware/authenticate");
 let router = express.Router();
 let {contactUs: ContactUs} = require('../sequelize').models
 
-router.post("/postContactDetails", authenticate, async (req, res) => {
+router.post("/postContactDetails", async (req, res) => {
 
     let contactDetails = req.body;
     try {
