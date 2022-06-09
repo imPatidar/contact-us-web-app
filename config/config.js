@@ -3,8 +3,8 @@ const config = {
         "host": "44.202.96.124",
         "port": 3306,
         "user": "pankaj",
-        "password": "pankajpatidar",
-        "database": "aws-contact-us"
+        "password": "yourpassword",
+        "database": "aws-contact"
     },
     sequelize: null,
     tokenKey: "contactUsDevelopedByPankaj"
