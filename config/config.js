@@ -2,7 +2,7 @@ const config = {
     database: {
         "host": "44.202.96.124",
         "port": 3306,
-        "user": "pankaj",
+        "user": "pankaj1",
         "password": "yourpassword",
         "database": "aws-contact"
     },
